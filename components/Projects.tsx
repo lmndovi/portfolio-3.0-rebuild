@@ -1,11 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Project } from "../typings";
+import { urlFor } from "../sanity";
 
-type Props = {};
+type Props = {
+  projects: Project[];
+};
 
-function Projects({}: Props) {
-  const projects = [1, 2, 3, 4, 5];
-
+function Projects({ projects }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -24,7 +26,7 @@ function Projects({}: Props) {
               transition={{ duration: 1.2 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              src="/portfolio.png"
+              src={urlFor(project.image).url()}
               alt=""
               className="h-80"
             />
@@ -34,13 +36,19 @@ function Projects({}: Props) {
                 <span className="underline decoration-[#f7ab0a]/50">
                   Case Study {index + 1} of {projects.length}:
                 </span>{" "}
-                Crypto Clone
+                {project.title}
               </h4>
+              {/* Tech Used */}
+              {/* {project?.technologies.map((technology) => (
+                <img
+                  key={technology._id}
+                  src={urlFor(technology.image).url()}
+                  alt={technology.title}
+                />
+              ))} */}
+
               <p className="text-lg text-center md:text-left">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
-                optio ipsum nam labore magnam animi pariatur illum eum nulla a
-                ipsam cumque dolore corporis, ad reprehenderit dolorem nemo
-                dicta voluptates!
+                {project.summary}
               </p>
             </div>
           </div>

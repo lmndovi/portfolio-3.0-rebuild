@@ -1,9 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { PageInfo } from "../typings";
+import { urlFor } from "../sanity";
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo;
+};
 
-export default function About({}: Props) {
+export default function About({ pageInfo }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -21,7 +25,7 @@ export default function About({}: Props) {
         whileInView={{ x: 0 }}
         viewport={{ once: true }}
         alt="Lu Ndovi"
-        src="/IMG_8313.JPG"
+        src={urlFor(pageInfo.profilePic).url()}
         className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-72 md:h-96 xl:w-[500px] xl:h-[600px] xl:mt-32"
       />
       <div className="space-y-10 px-0 md:px-10">
@@ -29,12 +33,7 @@ export default function About({}: Props) {
           A <span className="underline decoration-[#f7ab0a]/30">little</span>{" "}
           more about me
         </h4>
-        <p className="text-base">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
-          ad incidunt ducimus fuga molestiae explicabo a vel cumque, magnam
-          eveniet animi in voluptates neque aut culpa rem quasi facilis
-          provident.
-        </p>
+        <p className="text-sm">{pageInfo.backgroundInformation}</p>
       </div>
     </motion.div>
   );
