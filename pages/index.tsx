@@ -32,7 +32,7 @@ export default function Home({
 }: Props) {
   return (
     <>
-      <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-scroll z-0 overflow-x-hidden scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ab0a]/60">
+      <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-scroll z-0 overflow-x-hidden scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#1B7DE5]/60">
         <Head>
           <title>Lusungu's Portfolio</title>
         </Head>
@@ -60,20 +60,20 @@ export default function Home({
         </section>
 
         <section id="contact" className="snap-start">
-          <ContactMe />
+          <ContactMe pageInfo={pageInfo} />
         </section>
 
-        <Link href="#hero">
-          <footer className="sticky bottom-5 w-full cursor-pointer">
-            <div className="flex items-center justify-center">
+        <footer className="sticky bottom-5 w-full">
+          <div className="flex items-center justify-center">
+            <Link href="#hero" className="cursor-pointer">
               <img
-                src="/Instagram post - 1.png"
+                src="/logo.png"
                 alt=""
                 className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
-              />
-            </div>
-          </footer>
-        </Link>
+              />{" "}
+            </Link>
+          </div>
+        </footer>
       </div>
     </>
   );

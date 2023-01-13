@@ -26,11 +26,11 @@ export default function About({ pageInfo }: Props) {
         viewport={{ once: true }}
         alt="Lu Ndovi"
         src={urlFor(pageInfo.profilePic).url()}
-        className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-72 md:h-96 xl:w-[500px] xl:h-[600px] xl:mt-32"
+        className="mt-36 md:mb-0 flex-shrink-0 w-48 h-48 rounded-full object-cover md:rounded-lg md:w-72 md:h-96 xl:w-[500px] xl:h-[600px] xl:mt-32"
       />
-      <div className="space-y-10 px-0 md:px-10">
+      <div className="space-y-8 px-0 md:px-10">
         <h4 className="text-4xl font-semibold">
-          A <span className="underline decoration-[#f7ab0a]/30">little</span>{" "}
+          A <span className="underline decoration-[#1B7DE5]/50">little</span>{" "}
           more about me
         </h4>
         <p className="text-sm">{pageInfo.backgroundInformation}</p>
