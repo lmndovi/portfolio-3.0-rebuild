@@ -67,7 +67,7 @@ export default function Home({
           <div className="flex items-center justify-center">
             <Link href="#hero" className="cursor-pointer">
               <img
-                src="/logo.png"
+                src="/logo-1.png"
                 alt=""
                 className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
               />{" "}
