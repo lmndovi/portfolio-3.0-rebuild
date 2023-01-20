@@ -19,7 +19,7 @@ function Projects({ projects }: Props) {
       <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
         Projects
       </h3>
-      <div className="relative w-full flex mt-2 overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#1B7DE5]/60">
+      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#1B7DE5]/60">
         {projects?.map((project, index) => (
           <div className="w-screen flex-shrink-0 snap-center flex flex-col space-y-3 items-center p-20 justify-center md:p-44 h-screen mt-2">
             <Link href={project?.linkToBuild}>
@@ -30,7 +30,7 @@ function Projects({ projects }: Props) {
                 viewport={{ once: true }}
                 src={urlFor(project?.image).url()}
                 alt=""
-                className="h-66 mt-32 rounded-md md:h-80 lg:h-96 xl:h-96"
+                className="h-66 mt-32 rounded-md md:h-72 md:pt-1 xl:h-80"
               />
             </Link>
 
