@@ -14,6 +14,7 @@ import { fetchExperiences } from "../utils/fetchExperiences";
 import { fetchSkills } from "../utils/fetchSkills";
 import { fetchProjects } from "../utils/fetchProjects";
 import { fetchSocial } from "../utils/fetchSocials";
+import { HomeIcon } from "@heroicons/react/24/solid";
 
 type Props = {
   pageInfo: PageInfo;
@@ -66,11 +67,7 @@ export default function Home({
         <footer className="sticky bottom-5 w-full">
           <div className="flex items-center justify-center">
             <Link href="#hero" className="cursor-pointer">
-              <img
-                src="/logo-1.png"
-                alt=""
-                className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
-              />{" "}
+              <HomeIcon className="h-10 bg-[#1B7DE5] w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer p-2" />
             </Link>
           </div>
         </footer>

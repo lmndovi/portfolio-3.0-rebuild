@@ -22,10 +22,10 @@ function ContactMe({ pageInfo }: Props) {
       <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
         Contact
       </h3>
-      <div className="flex flex-col space-y-10 mt-44">
+      <div className="flex flex-col space-y-10 mt-28">
         <h4 className="text-4xl font-semibold text-center">
-          I have got just what you need.{" "}
-          <span className="underline decoration-[#1B7DE5]/50">Lets Talk</span>
+          Here to bring your ideas to life.{" "}
+          <span className="underline decoration-[#1B7DE5]/50">Let's talk.</span>
         </h4>
         <div className="space-y-5">
           <div className="flex items-center space-x-5 justify-center">

@@ -20,7 +20,7 @@ export default function ExperienceCard({ experience }: Props) {
         viewport={{ once: true }}
         src={urlFor(experience?.companyImage).url()}
         alt="From Solvers"
-        className="h-20 w-20 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
+        className="h-20 w-20 rounded-full xl:w-[120px] xl:h-[120px] object-cover object-center"
       />
 
       <div className="px-0 md:px-10">
@@ -36,15 +36,19 @@ export default function ExperienceCard({ experience }: Props) {
             />
           ))}
         </div>
-        <p className="uppercase py-5 text-gray-300">
-          {experience.dateStarted} -{" "}
-          {experience.isCurrentlyWorkingHere ? "Present" : experience.dateEnded}
-        </p>
-        <ul className="list-disc space-y-4 ml-5 text-lg">
-          {experience.points.map((point, i) => (
-            <li key={i}>{point}</li>
-          ))}
-        </ul>
+        <div className="overflow-y-scroll scrollbar-thin scrollbar-">
+          <p className="uppercase py-5 text-gray-300">
+            {experience.dateStarted} -{" "}
+            {experience.isCurrentlyWorkingHere
+              ? "Present"
+              : experience.dateEnded}
+          </p>
+          <ul className="list-disc space-y-4 ml-5 text-lg">
+            {experience.points.map((point, i) => (
+              <li key={i}>{point}</li>
+            ))}
+          </ul>
+        </div>
       </div>
     </article>
   );
