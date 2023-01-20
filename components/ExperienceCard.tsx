@@ -36,19 +36,16 @@ export default function ExperienceCard({ experience }: Props) {
             />
           ))}
         </div>
-        <div className="overflow-y-scroll scrollbar-thin scrollbar-">
-          <p className="uppercase py-5 text-gray-300">
-            {experience.dateStarted} -{" "}
-            {experience.isCurrentlyWorkingHere
-              ? "Present"
-              : experience.dateEnded}
-          </p>
-          <ul className="list-disc space-y-4 ml-5 text-lg">
-            {experience.points.map((point, i) => (
-              <li key={i}>{point}</li>
-            ))}
-          </ul>
-        </div>
+
+        <p className="uppercase py-5 text-gray-300">
+          {experience.dateStarted} -{" "}
+          {experience.isCurrentlyWorkingHere ? "Present" : experience.dateEnded}
+        </p>
+        <ul className="list-disc space-y-4 ml-5 text-lg">
+          {experience.points.map((point, i) => (
+            <li key={i}>{point}</li>
+          ))}
+        </ul>
       </div>
     </article>
   );
