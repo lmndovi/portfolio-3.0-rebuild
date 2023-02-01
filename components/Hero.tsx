@@ -4,6 +4,7 @@ import BackgroundCirles from "./BackgroundCirles";
 import Link from "next/link";
 import { PageInfo } from "../typings";
 import { urlFor } from "../sanity";
+import Image from "next/image";
 
 type Props = {
   pageInfo: PageInfo;
@@ -23,11 +24,15 @@ export default function Hero({ pageInfo }: Props) {
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
       <BackgroundCirles />
-      <img
-        src={urlFor(pageInfo?.heroImage).url()}
-        alt="Lu Ndovi"
-        className="relative rounded-full mx-auto object-cover h-48 w-48"
-      />
+      <div className="relative mx-auto h-48 w-48">
+        <Image
+          src={urlFor(pageInfo?.heroImage).url()}
+          alt="Lu Ndovi"
+          fill
+          className="rounded-full object-cover"
+        />
+      </div>
+
       <div className="z-20">
         <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
           {pageInfo?.role}

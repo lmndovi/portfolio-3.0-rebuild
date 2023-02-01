@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Project } from "../typings";
 import { urlFor } from "../sanity";
 import Link from "next/link";
+import Image from "next/image";
 
 type Props = {
   projects: Project[];
@@ -21,22 +22,29 @@ function Projects({ projects }: Props) {
       </h3>
       <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#1B7DE5]/60">
         {projects?.map((project, index) => (
-          <div className="w-screen flex-shrink-0 snap-center flex flex-col space-y-3 items-center p-20 justify-center md:p-44 h-screen mt-2">
+          <div
+            key={project._id}
+            className="w-screen flex-shrink-0 snap-center flex flex-col space-y-3 items-center p-20 justify-center md:p-44 h-screen mt-2"
+          >
             <Link href={project?.linkToBuild}>
-              <motion.img
+              <motion.div
                 initial={{ y: -300, opacity: 0 }}
                 transition={{ duration: 1.2 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                src={urlFor(project?.image).url()}
-                alt=""
-                className="h-66 mt-32 rounded-md md:h-72 md:pt-1
-                 xl:h-80"
-              />
+                className="relative h-48 w-80 top-16 md:h-54 xl:h-[400px] xl:w-[600px]"
+              >
+                <Image
+                  src={urlFor(project?.image).url()}
+                  alt={project?.title}
+                  className="rounded-md"
+                  fill
+                />
+              </motion.div>
             </Link>
 
-            <div className="space-y-7 px-0 md:px-10 max-w-6xl">
-              <h4 className="text-4xl font-semibold text-center">
+            <div className="pt-16 space-y-4 px-0 md:px-10 max-w-6xl">
+              <h4 className="text-3xl font-semibold text-center">
                 <span className="underline decoration-[#1B7DE5]/80">
                   Case Study {index + 1} of {projects.length}:
                 </span>{" "}
@@ -45,12 +53,15 @@ function Projects({ projects }: Props) {
               {/* Tech Used */}
               <div className="flex space-x-3 justify-center items-center">
                 {project?.technologies.map((technology) => (
-                  <img
-                    key={technology?._id}
-                    src={urlFor(technology?.image).url()}
-                    alt={technology?.title}
-                    className="h-8 w-8 rounded-md"
-                  />
+                  <div key={technology._id} className="relative h-8 w-8">
+                    <Image
+                      key={technology._id}
+                      className="rounded-full"
+                      src={urlFor(technology.image).url()}
+                      alt={technology.title}
+                      fill
+                    />
+                  </div>
                 ))}
               </div>
 

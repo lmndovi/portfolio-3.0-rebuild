@@ -13,9 +13,9 @@ type Inputs = {
 type Props = { pageInfo: PageInfo };
 
 function ContactMe({ pageInfo }: Props) {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (formData) =>
-    (window.location.href = `mailto: programmer123@gmail.com?subject=${formData.subject}&body=Hi, my name is ${formData.name}. ${formData.message}`);
+    (window.location.href = `mailto: ${pageInfo?.email}?subject=${formData.subject}&body=Hi, my name is ${formData.name}. ${formData.message}`);
 
   return (
     <div className="h-screen relative flex flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
@@ -25,7 +25,9 @@ function ContactMe({ pageInfo }: Props) {
       <div className="flex flex-col space-y-10 mt-28">
         <h4 className="text-4xl font-semibold text-center">
           Here to bring your ideas to life.{" "}
-          <span className="underline decoration-[#1B7DE5]/50">Let's talk.</span>
+          <span className="underline decoration-[#1B7DE5]/50">
+            Let&apos;s talk
+          </span>
         </h4>
         <div className="space-y-5">
           <div className="flex items-center space-x-5 justify-center">
