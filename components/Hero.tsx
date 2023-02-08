@@ -15,16 +15,16 @@ export default function Hero({ pageInfo }: Props) {
     words: [
       `Hey, I'm ${pageInfo?.name}.`,
       "Athlete-SalsaDancer-PlantDad.tsx",
-      "<ButMainlyJustACoder />",
+      "<ButMainlyACoder/>",
     ],
     loop: true,
     delaySpeed: 2000,
   });
 
   return (
-    <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
+    <div className="h-screen flex flex-col space-y-7 items-center justify-center text-center overflow-hidden">
       <BackgroundCirles />
-      <div className="relative mx-auto h-48 w-48">
+      <div className="relative mx-auto h-44 w-44 md:h-48 md:w-48">
         <Image
           src={urlFor(pageInfo?.heroImage).url()}
           alt="Lu Ndovi"
@@ -34,11 +34,11 @@ export default function Hero({ pageInfo }: Props) {
       </div>
 
       <div className="z-20">
-        <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
+        <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[10px] md:tracking-[15px]">
           {pageInfo?.role}
         </h2>
-        <h1 className="text-5xl lg:text-6xl font-semibold px-10">
-          <span className="mr-3">{text}</span>
+        <h1 className="mx-auto text-4xl lg:text-6xl font-semibold px-12">
+          <span className="mx-2">{text}</span>
           <Cursor cursorColor="blue" />
         </h1>
 
