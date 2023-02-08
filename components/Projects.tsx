@@ -32,7 +32,7 @@ function Projects({ projects }: Props) {
                 transition={{ duration: 1.2 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="relative h-40 w-72 top-20 mb-5 md:h-72 md:w-96 xl:h-[400px] xl:w-[600px]"
+                className="relative h-40 w-72 top-20 mb-5  md:h-60 md:w-96 xl:h-[400px] xl:w-[600px] mt-8"
               >
                 <Image
                   src={urlFor(project?.image).url()}

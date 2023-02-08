@@ -23,24 +23,24 @@ function ContactMe({ pageInfo }: Props) {
         Contact
       </h3>
       <div className="flex flex-col space-y-10 mt-28">
-        <h4 className="text-4xl font-semibold text-center">
+        <h4 className="text-3xl md:text-5xl font-semibold text-center mx-auto w-96 md:w-[600px]">
           Here to bring your ideas to life.{" "}
           <span className="underline decoration-[#1B7DE5]/50">
             Let&apos;s talk
           </span>
         </h4>
         <div className="space-y-5">
-          <div className="flex items-center space-x-5 justify-center">
+          <div className="flex items-center space-x-4 justify-center">
             <PhoneIcon className="text-[#1B7DE5]/40 h-7 w-7 animate-pulse " />
             <p className="text-2xl">{pageInfo.phoneNumber}</p>
           </div>
 
-          <div className="flex items-center space-x-5 justify-center">
+          <div className="flex items-center space-x-4 justify-center mx-auto w-96">
             <MapPinIcon className="text-[#1B7DE5]/40 h-7 w-7 animate-pulse " />
             <p className="text-2xl">{pageInfo.address}</p>
           </div>
 
-          <div className="flex items-center space-x-5 justify-center">
+          <div className="flex items-center space-x-4 justify-center">
             <EnvelopeIcon className="text-[#1B7DE5]/40 h-7 w-7 animate-pulse " />
             <p className="text-2xl">{pageInfo.email}</p>
           </div>
@@ -48,19 +48,19 @@ function ContactMe({ pageInfo }: Props) {
 
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col space-y-2 w-fit mx-auto"
+          className="flex flex-col space-y-2 w-80 md:w-[600px] mx-auto"
         >
-          <div className="flex space-x-2">
+          <div className="flex space-x-1">
             <input
               {...register("name")}
               placeholder="Name"
-              className="contactInput"
+              className="contactInput w-40"
               type="text"
             />
             <input
               {...register("email")}
               placeholder="Email"
-              className="contactInput"
+              className="contactInput w-[156px]"
               type="email"
             />
           </div>
