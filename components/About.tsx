@@ -25,7 +25,7 @@ export default function About({ pageInfo }: Props) {
         transition={{ duration: 1.2 }}
         whileInView={{ x: 0 }}
         viewport={{ once: true }}
-        className="relative w-48 h-48 md:w-80 md:h-[450px] xl:w-[500px] xl:h-[520px] mt-36 md:mb-0 flex-shrink-0 xl:mt-32"
+        className="relative w-36 h-36 sm:h-48 sm:w-48 md:w-80 md:h-[450px] xl:w-[500px] xl:h-[520px] mt-32 md:mb-0 flex-shrink-0 xl:mt-32"
       >
         <Image
           src={urlFor(pageInfo.profilePic).url()}
@@ -34,12 +34,12 @@ export default function About({ pageInfo }: Props) {
           className="object-cover rounded-full md:rounded-lg"
         />
       </motion.div>
-      <div className="space-y-7 px-0 md:px-10 md:mt-28 ">
-        <h4 className="text-4xl font-semibold">
+      <div className="space-y-6 px-0 md:px-10 md:mt-28 ">
+        <h4 className="text-3xl font-semibold">
           A <span className="underline decoration-[#1B7DE5]/70">little</span>{" "}
           more about me
         </h4>
-        <p className="text-base">{pageInfo.backgroundInformation}</p>
+        <p className="text-sm sm:text-base">{pageInfo.backgroundInformation}</p>
       </div>
     </motion.div>
   );
