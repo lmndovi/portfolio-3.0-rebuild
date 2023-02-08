@@ -32,7 +32,7 @@ function Projects({ projects }: Props) {
                 transition={{ duration: 1.2 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="relative h-48 w-80 top-16 md:h-54 xl:h-[400px] xl:w-[600px]"
+                className="relative h-40 w-72 top-20 mb-5 md:h-72 md:w-96 xl:h-[400px] xl:w-[600px]"
               >
                 <Image
                   src={urlFor(project?.image).url()}
@@ -44,7 +44,7 @@ function Projects({ projects }: Props) {
             </Link>
 
             <div className="pt-16 space-y-4 px-0 md:px-10 max-w-6xl">
-              <h4 className="text-3xl font-semibold text-center">
+              <h4 className="text-2xl font-semibold text-center">
                 <span className="underline decoration-[#1B7DE5]/80">
                   Case Study {index + 1} of {projects.length}:
                 </span>{" "}
