@@ -1,10 +1,11 @@
 import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
-import BackgroundCirles from "./BackgroundCirles";
+
 import Link from "next/link";
 import { PageInfo } from "../typings";
 import { urlFor } from "../sanity";
 import Image from "next/image";
+import BackgroundCircles from "./BackgroundCircles";
 
 type Props = {
   pageInfo: PageInfo;
@@ -23,7 +24,7 @@ export default function Hero({ pageInfo }: Props) {
 
   return (
     <div className="h-screen flex flex-col space-y-7 items-center justify-center text-center overflow-hidden">
-      <BackgroundCirles />
+      <BackgroundCircles />
       <div className="relative mx-auto h-44 w-44 md:h-48 md:w-48">
         <Image
           src={urlFor(pageInfo?.heroImage).url()}
